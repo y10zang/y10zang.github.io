@@ -1,5 +1,5 @@
 <!-- docs/_sidebar.md -->
 
 * [math](/)
-* [OED](/ODE.md)
-* [complex](/complex.md)
+* [OED](math/ODE.md)
+* [complex](math/complex.md)
