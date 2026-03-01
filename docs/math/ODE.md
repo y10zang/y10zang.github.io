@@ -1186,6 +1186,33 @@ y=x^{\alpha}\displaystyle\sum_{n=m}^{\infty}a_nx^n=x^{\alpha+m}\displaystyle\sum
 $$
 这里$b_0=a_m\neq0$，而$\beta$仍为待定常数。
 
+定义函数$\Gamma(s)$如下：
+$$
+\begin{cases}
+\Gamma(s)=\displaystyle\int_{0}^{+ \infty}s^{s-1}e^{-x}\text{d}x, &s > 0\\
+\Gamma(s)=\displaystyle\frac{1}{s}\Gamma(s+1), &s < 0 \text{且非整数}
+\end{cases}
+$$
+
+定义：
+$$
+J_n(x)\equiv y_1=\displaystyle\sum_{k=0}^{\infty}\displaystyle\frac{(-1)^k}{k!\Gamma(n+k+1)}\left(\displaystyle\frac{x}{2}\right)^{2k+n}
+$$
+称为$n$阶贝塞尔函数。
+$$
+J_{-n}(x)\equiv y_2=\displaystyle\sum_{k=0}^{\infty}\displaystyle\frac{(-1)^k}{k!\Gamma(-n+k+1)}\left(\displaystyle\frac{x}{2}\right)^{2k-n}
+$$
+称为$-n$阶贝塞尔函数。
+
+于是方程(4.74)的通解可写为
+$$
+y=c_1J_n(x)+c_2J_{-n}(x)
+$$
+这里$c_1,c_2$是任意常数。此情形的$J_n(x)$和$J_{-n}(x)$称为第一类贝塞尔函数。
+
+当$n$为自然数时，虽然仍可求出$a_{2k}(k=n+1,n+2,\cdots),a_{2n}$任意，但容易验证，由此得到的$J_n(x)$和$J_{-n}(x)$线性相关，为了求出与$J_n(x)$和$J_{-n}(x)$线性无关的另一个特解，要用其他方法，所求得的特解称为第二类贝塞尔函数，在此不作深入介绍。
+
+### 线性微分方程组
 
 
 
