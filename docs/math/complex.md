@@ -29,7 +29,10 @@ $x=\text{Re}(z),y=\text{Im}(z)$
 
 所以: $\text{Arg}\,(z_1z_2)=\text{Arg}\,z_1+\text{Arg}\,z_2,\;\text{Arg}\,\displaystyle\frac{z_1}{z_2}=\text{Arg}\,z_1-\text{Arg}\,z_2$
 
-所以: $z_1z_2=(x_1+iy_1)(x_2+iy_2)=(x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1)\;;\displaystyle\frac{z_1}{z_2}=\frac{x_1+iy_1}{x_2+iy_2}=\frac{(x_1+iy_1)(x_2-iy_2)}{x_2^2+y_2^2}=\displaystyle\frac{x_1x_2+y_1y_2+i(x_2y_1-x_1y_2)}{x_2^2+y_2^2}$
+所以: 
+$$
+z_1z_2=(x_1+iy_1)(x_2+iy_2)=(x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1)\;;\displaystyle\frac{z_1}{z_2}=\frac{x_1+iy_1}{x_2+iy_2}=\frac{(x_1+iy_1)(x_2-iy_2)}{x_2^2+y_2^2}=\displaystyle\frac{x_1x_2+y_1y_2+i(x_2y_1-x_1y_2)}{x_2^2+y_2^2}
+$$
 
 复数的乘幂: $z^n=r^ne^{in\theta}=r^n(\cos n\theta+i\sin n\theta),\,|z^n|=|z|^n,\,\text{Arg}\,z^n=n\text{Arg}\,z$
 
@@ -586,10 +589,14 @@ $$
 积分判断法：如果$f(z)$在$z_0$某个去心邻域内解析，且对于$k=1,2,\cdots,m-1$，有$\displaystyle\oint_{C}^{}(z-z_0)^kf(z)\text{d}z=0$，而$\displaystyle\oint_{C}^{}(z-z_0)^mf(z)\neq0$，其中$C$是包含$z_0$的简单闭曲线，则$z_0$是$f(z)$的$m$阶极点。
 
 本质奇点(本性奇点)的充要条件：<br>
-(1)$\displaystyle\lim_{z\to a}f(z)\neq\begin{cases}
+(1)
+$$
+\displaystyle\lim_{z\to a}f(z)\neq\begin{cases}
 b, &\text{有限数}\\
 \infty
-\end{cases}$即极限$\displaystyle\lim_{z\to a}f(z)$不存在。<br>
+\end{cases}
+$$
+即极限$\displaystyle\lim_{z\to a}f(z)$不存在。<br>
 (2)主要部分有无穷多项负幂。
 
 皮卡(Picard)小定理:如果$a$为函数$f(z)$的本质奇点，则对于任何常数$A$,不管它是有限数还是无穷，都有一收敛于$a$的点列$\{z_n\}$，使得$\displaystyle\lim_{z_n\to a}f(z_n)=A$。<br>
@@ -889,10 +896,13 @@ $$
 
 ##### 分式线性变换及其分解
 
-$w=\displaystyle\frac{az+b}{cz+d},\begin{vmatrix}
+$$
+w=\displaystyle\frac{az+b}{cz+d},\begin{vmatrix}
 a & b \\
 c & d
-\end{vmatrix}=ad-bc\neq0$称为分式线性变换。简记为$w=L(z)$。
+\end{vmatrix}=ad-bc\neq0
+$$
+称为分式线性变换。简记为$w=L(z)$。
 
 注：分式线性变换又被称为默比乌斯变换。<br>
 条件$ad-bc\neq0$是必要的，否则将导致$L(z)$恒为常数。<br>
