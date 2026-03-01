@@ -1,4 +1,4 @@
 <!-- docs/_sidebar.md -->
 
-* [computer](/)
+* [computer](computer/)
 * [java](computer/java.md)
