@@ -530,7 +530,7 @@ $$。
 定理5 <br>
 $n$阶齐次线性微分方程(4.2)一定存在$n$个线性无关的解。
 
-定理6(通解机构定理) <br>
+定理6(通解结构定理) <br>
 如果$x_1(t),x_2(t),\cdots,x_n(t)$是方程(4.2)的$n$个线性无关的解，则方程(4.2)的通解可表示为
 $$
 \begin{align}
@@ -1214,8 +1214,246 @@ $$
 
 ### 线性微分方程组
 
+#### 存在唯一性定理
 
+我们考察形如
+$$
+\begin{align}
+\begin{cases}
+x'_ 1=a_{11}(t)x_1+a_{12}(t)x_2+\cdots+a_{1n}(t)x_n+f_1(t),\\
+x'_ 2=a_{21}(t)x_1+a_{22}(t)x_2+\cdots+a_{2n}(t)x_n+f_2(t),\\
+\cdots\cdots\\
+x'_ n=a_{n1}(t)x_1+a_{n2}(t)x_2+\cdots+a_{nn}(t)x_n+f_n(t)
+\end{cases}\tag{5.1}
+\end{align}
+$$
+的一阶线性微分方程组，其中已知函数$a_{ij}(t)(i,j=q,2,\cdots,n)$和$f_i(t)(i=1,2,\cdots,n)$在区间$a\leqslant t\leqslant b$上是连续的，方程组(5.1)关于$x_1,x_2,\cdots,x_n$及$x'_1,x'_2,\cdots,x'_n$是线性的。<br>
+我们引入下面的记号
+$$
+\begin{align}
+A(t)=
+\begin{bmatrix}
+a_{11}(t) & a_{12}(t) & \cdots & a_{1n}(t) \\
+a_{21}(t) & a_{22}(t) & \cdots & a_{2n}(t) \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1}(t) & a_{n2}(t) & \cdots & a_{nn}(t)
+\end{bmatrix}\tag{5.2}
+\end{align}
+$$
+这里$A(t)$是$n\times n$矩阵，它的元是$n^2$个函数$a_{ij}(t)(i,j=1,2,\cdots,n).$
+$$
+\begin{align}
+\pmb{f}(t)=
+\begin{bmatrix}
+f_1(t) \\
+f_1(t) \\
+\vdots \\
+f_n(t)
+\end{bmatrix},
+\pmb{x}=
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix},
+\pmb{x'}=
+\begin{bmatrix}
+x'_1 \\
+x'_2 \\
+\vdots \\
+x'_n
+\end{bmatrix}\tag{5.3}
+\end{align}
+$$
+这里$\pmb{f}(t),\pmb{x},\pmb{x'}$是$n\times 1$矩阵或$n\times n$维向量。有时为简便起见，我们也将$n$维列向量写成$n$维行向量的转置，如$\pmb{x}=(x_1,x_2,\cdots,x_n)^{T}$。<br>
+注意，矩阵相加、矩阵相乘、矩阵与纯量相乘等等性质对于以函数作为元的矩阵同样成立。这样一来，方程组(5.1)可以写成下面的形式
+$$
+\begin{align}
+\pmb{x'}=A(t)\pmb{x}+\pmb{f}(t)\tag{5.4}
+\end{align}
+$$
+我们引进下面的概念：<br>
+一个矩阵或者一个向量在区间$a\leqslant t\leqslant b$上称为连续的，如果它的每一个元都是区间$a\leqslant t\leqslant b$上的连续函数。<br>
+一个$n\times n$矩阵$B(t)$或者一个$n$维列向量$\pmb{u}(t)$
+$$
+\begin{align}
+B(t)=
+\begin{bmatrix}
+b_{11}(t) & b_{12}(t) & \cdots & b_{1n}(t) \\
+b_{21}(t) & b_{22}(t) & \cdots & b_{2n}(t) \\
+\vdots & \vdots & \ddots & \vdots \\
+b_{n1}(t) & b_{n2}(t) & \cdots & b_{nn}(t)
+\end{bmatrix},
+\pmb{u}(t)=
+\begin{bmatrix}
+u_1(t) \\
+u_1(t) \\
+\vdots \\
+u_n(t)
+\end{bmatrix}
+\end{align}
+$$
+在区间$a\leqslant t\leqslant b$上称为可微的，如果它的每一个元都在区间$a\leqslant t\leqslant b$上可微。它们的导数分别由下式给出：
+$$
+\begin{align}
+B'(t)=
+\begin{bmatrix}
+b'_{11}(t) & b'_{12}(t) & \cdots & b'_{1n}(t) \\
+b'_{21}(t) & b'_{22}(t) & \cdots & b'_{2n}(t) \\
+\vdots & \vdots & \ddots & \vdots \\
+b'_{n1}(t) & b'_{n2}(t) & \cdots & b'_{nn}(t)
+\end{bmatrix},
+\pmb{u'}(t)=
+\begin{bmatrix}
+u'_1(t) \\
+u'_1(t) \\
+\vdots \\
+u'_n(t)
+\end{bmatrix}
+\end{align}
+$$
+不难证明，如果$n\times n$矩阵$A(t),B(t)$及$n$维向量$\pmb{u}(t),\pmb{v}(t)$是可微的，那么下列等式成立：<br>
+(1)$[A(t)+B(t)]'=A'(t)+B'(t),[\pmb{u'}(t)+\pmb{v'}(t)]'=\pmb{u'}(t)+\pmb{v'}(t);$<br>
+(2)$[A(t)\cdot B(t)]'=A'(t)B(t)+A(t)B'(t)$;<br>
+(3)$[A(t)\pmb{u}(t)]'=A'(t)\pmb{u}(t)+A(t)\pmb{u'}(t)$.<br>
+类似地，矩阵$B(t)$或者向量$\pmb{u}(t)$在区间$a\leqslant t\leqslant b$上称为可积的，如果它的每一个元都在区间$a\leqslant t\leqslant b$上可积。它们的积分分别由下式给出：
+$$
+\begin{align}
+\displaystyle\int_{a}^{b}B(t)\text{d}t=
+\begin{bmatrix}
+\displaystyle\int_{a}^{b}b_{11}(t)\text{d}t & \displaystyle\int_{a}^{b}b_{12}(t)\text{d}t & \cdots & \displaystyle\int_{a}^{b}b_{1n}(t)\text{d}t \\
+\displaystyle\int_{a}^{b}b_{21}(t)\text{d}t & \displaystyle\int_{a}^{b}b_{22}(t)\text{d}t & \cdots & \displaystyle\int_{a}^{b}b_{2n}(t)\text{d}t \\
+\vdots & \vdots & \ddots & \vdots \\
+\displaystyle\int_{a}^{b}b_{n1}(t)\text{d}t & \displaystyle\int_{a}^{b}b_{n2}(t)\text{d}t & \cdots & \displaystyle\int_{a}^{b}b_{nn}(t)\text{d}t
+\end{bmatrix},
+\displaystyle\int_{a}^{b}\pmb{u}(t)\text{d}t=
+\begin{bmatrix}
+\displaystyle\int_{a}^{b}u_1(t)\text{d}t \\
+\displaystyle\int_{a}^{b}u_1(t)\text{d}t \\
+\vdots \\
+\displaystyle\int_{a}^{b}u_n(t)\text{d}t
+\end{bmatrix}
+\end{align}
+$$
 
+现在我们给出(5.4)的解的定义。<br>
+定义1 <br>
+设$A(t)$是区间$a\leqslant t\leqslant b$上的$n\times n$连续矩阵，$\pmb{f}(t)$是同一区间$a\leqslant t\leqslant b$上的连续$n$维向量。方程组
+$$
+\begin{align}
+\pmb{x'}=A(t)\pmb{x}+\pmb{f}(t)\tag{5.4}
+\end{align}
+$$
+在某区间$\alpha\leqslant t\leqslant\beta$(这里$[\alpha,\beta]\subset[a,b]$)的解就是向量$\pmb{u}(t)$，它的导数$\pmb{u'}(t)$在区间$\alpha\leqslant\beta$上连续且满足
+$$
+\begin{align}
+\pmb{u'}(t)=A(t)\pmb{u}(t)+\pmb{f}(t),\quad \alpha\leqslant\beta.
+\end{align}
+$$
+现在考虑带有初值条件$\pmb{x}(t_0)=\pmb{\eta}$的方程组(5.4)，这里$t_0$是区间$a\leqslant t\leqslant b$上的已知数，$\pmb{\eta}$是$n$维已知向量，在这样条件下求解方程组称为柯西初值问题。
+
+定义2 <br>
+初值问题
+$$
+\begin{align}
+\pmb{x'}=A(t)\pmb{x}+\pmb{f}(t),\quad \pmb{x}(t_0)=\pmb{\eta}\tag{5.5}
+\end{align}
+$$
+的解就是方程(5.4)在包含$t_0$的区间$\alpha\leqslant\beta$上的解$\pmb{u}(t)$，使得$\pmb{u}(t_0)=\pmb{\eta}$。
+
+考虑阶线性微分方程的初值问题
+$$
+\begin{align}
+\begin{cases}
+x^{(n)}+a_1(t)x^{(n-1)}+\cdots+a_{n-1}(t)x'+a_n(t)x=f(t),\\
+x(t_0)=\eta_1,x'(t_0)=\eta_2,\cdots,x^{(n-1)}(t_0)=\eta_n,
+\end{cases}\tag{5.6}
+\end{align}
+$$
+其中$a_1(t),a_2(t),\cdots,a_n(t),f(t)$是区间$a\leqslant t\leqslant b$上的已知连续函数，$t_0\in[a,b],\eta_1,\eta_2,\cdots,\eta_n$是已知常数。我们指出，它可以化为下列线性微分方程组的初值问题
+$$
+\begin{align}
+\begin{cases}
+\pmb{x'}=
+\begin{bmatrix}
+0 & 1 & 0 & \cdots & 0 \\
+0 & 0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \cdots & 1 \\
+-a_n(t) & -a_{n-1}(t) & -a_{n-2}(t) & \cdots & -a_1(t)
+\end{bmatrix}
+\pmb{x}+
+\begin{bmatrix}
+0 \\
+0 \\
+\vdots \\
+0 \\
+f(t)
+\end{bmatrix},\\
+\pmb{x}(t_0)=\pmb{\eta},
+\end{cases}\tag{5.7}
+\end{align}
+$$
+其中
+$$
+\begin{align}
+\pmb{x}=
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix},
+\pmb{x'}=
+\begin{bmatrix}
+x'_1 \\
+x'_2 \\
+\vdots \\
+x'_n
+\end{bmatrix}
+\pmb{\eta}=
+\begin{bmatrix}
+\eta_1 \\
+\eta_2 \\
+\vdots \\
+\eta_n
+\end{bmatrix}.
+\end{align}
+$$
+值得指出的是：每一个$n$阶线性微分方程可化为$n$个一阶线性微分方程构成的方程组，反之却不成立。
+
+##### 存在唯一性定理
+
+定理1(存在唯一性定理)<br>
+如果$A(t)$是$n\times n$矩阵，$\pmb{f}(t)$是$n$维列向量，它们都在区间$a\leqslant t\leqslant b$上连续，则对于区间$a\leqslant t\leqslant b$上的任何数$t_0$及任一常数$n$维列向量$\pmb{\eta}$，方程组
+$$
+\begin{align}
+\pmb{x'}=A(t)\pmb{x}+\pmb{f}(t)\tag{5.4}
+\end{align}
+$$
+存在唯一解$\pmb{\varphi}(t)$，定义于整个区间$a\leqslant t\leqslant b$上，且满足初值条件
+$$
+\pmb{\varphi}(t_0)=\pmb{\eta}
+$$
+
+#### 线性微分方程组的一般理论
+
+现在讨论线性微分方程组
+$$
+\begin{align}
+\pmb{x'}=A(t)\pmb{x}+\pmb{f}(t)\tag{5.14}
+\end{align}
+$$
+的一般理论，主要是研究它的解的结构问题。<br>
+如果$\pmb{f}(t)\neq0$，则(5.14)称为非齐次线性的。<br>
+如果$\pmb{f}(t)=0$，则方程的形式为
+$$
+\begin{align}
+\pmb{x'}=A(t)\pmb{x}\tag{5.15}
+\end{align}
+$$
+称为齐次线性的。通常(5.15)称为对应于(5.14)的齐次线性微分方程组。
 
 
 
