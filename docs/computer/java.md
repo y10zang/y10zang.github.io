@@ -122,7 +122,7 @@ public class HelloController {
 ##### 简化配置
 application.properties
 
-```shell
+```javascript
 server.port=8888
 ```
 
