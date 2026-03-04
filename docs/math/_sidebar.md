@@ -1,5 +1,8 @@
 <!-- docs/_sidebar.md -->
 
+* [Home](/)
 * [math](math/)
-* [OED](math/ODE.md)
+* [analysis](math/Analysis/)
+* [algebra](math/Algebra/)
+* [ode](math/ODE.md)
 * [complex](math/complex.md)
