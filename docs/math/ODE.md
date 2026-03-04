@@ -1455,6 +1455,241 @@ $$
 $$
 称为齐次线性的。通常(5.15)称为对应于(5.14)的齐次线性微分方程组。
 
+##### 齐次线性微分方程组
+
+定理2(叠加原理) <br>
+如果$\pmb{u}(t)$和$\pmb{v}(t)$是(5.15)的解，则它们的线性组合$\alpha\pmb{u}(t)+\beta\pmb{v}(t)$也是(5.15)的解，这里$\alpha,\beta$是任意常数。<br>
+定理2说明，(5.15)的所有解的集合构成一个线性空间。
+
+设有$n$个定义在区间$a\leqslant t\leqslant b$上的向量函数
+$$
+\pmb{x}_1(t)=
+\begin{bmatrix}
+x_{11}(t) \\
+x_{21}(t) \\
+\vdots \\
+x_{n1}(t)
+\end{bmatrix},
+\pmb{x}_2(t)=
+\begin{bmatrix}
+x_{12}(t) \\
+x_{22}(t) \\
+\vdots \\
+x_{n2}(t)
+\end{bmatrix},\cdots,
+\pmb{x}_n(t)=
+\begin{bmatrix}
+x_{1n}(t) \\
+x_{2n}(t) \\
+\vdots \\
+x_{nn}(t)
+\end{bmatrix},
+$$
+由这$n$个向量函数构成的行列式
+$$
+W[\pmb{x}_1(t),\pmb{x}_2(t),\cdots,\pmb{x}_n(t)]=W(t)=
+\begin{bmatrix}
+x_{11}(t) & \cdots & x_{1n}(t) \\
+\vdots & \ddots & \vdots \\
+x_{n1}(t) & \cdots & x_{nn}(t)
+\end{bmatrix}
+$$
+称为这些向量函数的朗斯基行列式。
+
+定理3 <br>
+如果向量函数$\pmb{x}_1(t),\pmb{x}_2(t),\cdots,\pmb{x}_n(t)$在区间$a\leqslant t\leqslant b$上线性相关，则它们的朗斯基行列式$W(t)=0(a\leqslant t\leqslant b)$。
+
+定理4 <br>
+如果(5.15)的解$\pmb{x}_1(t),\pmb{x}_2(t),\cdots,\pmb{x}_n(t)$线性无关，那么他们的朗斯基行列式$W(t)\neq0(a\leqslant t\leqslant b)$。
+
+定理5 <br>
+齐次线性微分方程组(5.15)一定存在$n$个线性无关的解$\pmb{x}_1(t),\pmb{x}_2(t),\cdots,\pmb{x}_n(t)$。
+
+定理6 <br>
+如果$\pmb{x}_1(t),\pmb{x}_2(t),\cdots,\pmb{x}_n(t)$是(5.15)的$n$个线性无关的解，则(5.15)的任一解$\pmb{x}(t)$均可表示为
+$$
+\pmb{x}(t)=c_1\pmb{x}_1(t)+c_2\pmb{x}_2(t)+\cdots+c_n\pmb{x}_n(t),
+$$
+这里$c_1,c_2,\cdots,c_n$是相应的确定常数。
+
+推论1 (5.15)的线性无关解的最大个数等于$n$。<br>
+推论2 如果已知(5.15)的$k$个线性无关解，则(5.15)可以降低为含$n-k$个未知函数的线性微分方程组。特别地，如果已知(5.15)的$n-1$个线性无关解，则(5.15)的通解即可得到。
+
+我们称(5.15)的$n$个线性无关的解$\pmb{x}_1(t),\pmb{x}_2(t),\cdots,\pmb{x}_n(t)$为(5.15)的一个基本解组。显然(5.15)具有无穷多个不同的基本解组。(5.15)所有解的集合构成一个$n$维线性空间。
+
+现在，我们将本节的定理写成矩阵的形式。<br>
+如果一个$n\times n$矩阵的每一列都是(5.15)的解，我们称这个矩阵为(5.15)的解矩阵。它的列在$a\leqslant t\leqslant b$上是线性无关的解矩阵称为在$a\leqslant t\leqslant b$上(5.15)的基解矩阵。我们用$\Phi(t)$表示由(5.15)的$n$个线性无关的解$\varphi_1(t),\varphi_2(t),\cdots,\varphi_n(t)$作为列构成的基解矩阵。当$\Phi(t_0)=E$($E$为单位矩阵)时称其为标准基解矩阵。
+
+定理1* <br>
+(5.15)一定存在一个基解矩阵$\Phi(t)$。如果$\psi(t)$是(5.15)的任一解，那么
+$$
+\begin{align}
+\psi(t)=\Phi(t)c\tag{5.22}
+\end{align}
+$$
+这里$c$是确定的$n$维常数列向量。
+
+定理2* <br>
+(5.15)的一个解矩阵$\Phi(t)$是基解矩阵的充要条件是$\det\Phi(t)\neq0(a\leqslant t\leqslant b)$；而且，如果对某一个$t_0\in[a,b],\det\Phi(t_0)\neq0$，则$\det\Phi(t)\neq0(a\leqslant t\leqslant b)$。($\det\Phi(t)$表示矩阵$\Phi(t)$的行列式)。
+
+推论1* <br>
+如果$\Phi(t)$是(5.15)在区间$a\leqslant t\leqslant b$上的基解矩阵，$C$是非奇异$n\times n$常数矩阵，那么，$\Phi(t)C$也是(5.15)在区间$a\leqslant t\leqslant b$上的基解矩阵。
+
+推论2* <br>
+如果$\Phi(t)$,$\Psi(t)$在区间$a\leqslant t\leqslant b$上是$\pmb{x}'=A(t)\pmb{x}$的两个基解矩阵，那么存在一个非奇异$n\times n$常数矩阵${C}$，使得在区间$a\leqslant t\leqslant b$上$\Psi(t)=\Phi(t){C}$。
+
+##### 非齐次线性微分方程组
+
+现在讨论非齐次线性微分方程组
+$$
+\begin{align}
+\pmb{x}'=A(t)\pmb{x}+\pmb{f}(t)\tag{5.14}
+\end{align}
+$$
+的解的结构问题，这里$A(t)$是区间$a\leqslant t\leqslant b$上的已知$n\times n$连续矩阵，$\pmb{f}(t)$是区间$a\leqslant t\leqslant b$上的已知$n$维连续列向量。向量$\pmb{f}(t)$通常称为强迫项，因为如果(5.14)描述一个力学系统，$\pmb{f}(t)$就代表外力。
+
+我们容易验证的两个简单性质：
+
+性质1 <br>
+如果$\varphi(t)$是(5.14)的解，$\psi(t)$是(5.14)对应的齐次线性微分方程组(5.15)的解。则$\varphi(t)+\psi(t)$是(5.14)的解。
+
+性质2 <br>
+如果$\tilde \varphi(t),\overline{\varphi}(t)$是(5.14)的两个解，则$\tilde\varphi(t)-\overline{\varphi}(t)$是(5.15)的解。
+
+定理7 <br>
+设$\Phi(t)$是(5.15)的基解矩阵，$\overline{\varphi}(t)$是(5.14)的某一解，则(5.14)的任一解$\varphi(t)$都可表为
+$$
+\begin{align}
+\varphi(t)=\Phi(t)c+\overline{\varphi}(t)\tag{5.23}
+\end{align}
+$$
+这里$c$是确定的常数列向量。
+
+###### 常数变易法
+
+定理8 <br>
+如果$\Phi(t)$是(5.15)的基解矩阵，则向量函数
+$$
+\varphi(t)=\Phi(t)\displaystyle\int_{t_0}^{t}\Phi^{-1}(s)\pmb{f}(s)\text{d}s
+$$
+是(5.14)的解，且满足初值条件$\varphi(t_0)=0$。
+
+由定理7和定理8容易看出，(5.14)的满足初值条件$\varphi(t_0)=\pmb{\eta}$的解由下面公式给出
+$$
+\begin{align}
+\varphi(t)=\Phi(t)\Phi^{-1}(t_0)\pmb{\eta}+\Phi(t)\displaystyle\int_{t_0}^{t}\Phi^{-1}(s)\pmb{f}(s)\text{d}s\tag{5.27}
+\end{align}
+$$
+这里$\varphi_h(t)=\Phi(t)\Phi^{-1}(t_0)\pmb{\eta}$是(5.15)的满足初值条件$\varphi_k(t_0)=\pmb{\eta}$的解。公式(5.27)称为非齐次线性微分方程组(5.14)的常数变易公式。
+
+Liouville 公式：
+$$
+W(t)=W(t_0)e^{\int_{t_0}^{t}[a_{11}(s)+a_{22}(s)+\cdots+a_{nn}(s)]\text{d}s},\quad t_0,t\in[a,b].
+$$
+
+##### 常系数线性微分方程组
+
+本节研究常系数线性微分方程组的问题，主要讨论齐次线性微分方程组
+$$
+\begin{align}
+\pmb{x}'=A\pmb{x}\tag{5.33}
+\end{align}
+$$
+的基解矩阵的结构，这里$A$是$n\times n$常数矩阵。我们将通过代数方法，寻求(5.33)的一个基解矩阵。
+
+###### 矩阵指数$\exp A$的定义和性质
+
+如果$A$是一个$n\times n$常数矩阵，我们定义矩阵指数$\exp A$(或写作$e^{A}$)为下面的矩阵级数的和：
+$$
+\begin{align}
+\exp{A}=\displaystyle\sum_{k=0}^{\infty}\displaystyle\frac{A^k}{k!}=E+A+\displaystyle\frac{A^2}{2!}+\cdots+\displaystyle\frac{A^m}{m!}+\cdots,\tag{5.34}
+\end{align}
+$$
+其中$E$为$n$阶单位矩阵，$A^m$是矩阵$A$的$m$次幂。这里我们规定$A^0=E,0!=1$。这个级数对于所有的$A$都是收敛的，因而，$\exp A$是一个确定的矩阵。特别地，对所有元均为$0$的零矩阵$O$，有$\exp O=E.$
+
+事实上，易知对于一切正整数$k$，有
+$$
+\left\|\displaystyle\frac{A^k}{k!}\right\|\leqslant \displaystyle\frac{\|A\|^k}{k!},
+$$
+又因对于任一矩阵$A$，$\|A\|$是一个确定的实数，所以数值级数
+$$
+\|E\|+\|A\|+\displaystyle\frac{\|A\|^2}{2!}+\cdots+\displaystyle\frac{\|A\|^m}{m!}+\cdots
+$$
+是收敛的(注意，它的和是$n-1+e^{\|A\|}$)。又我们知道，如果一个矩阵级数的每一项的范数都小于一个收敛的数值级数的对应项，则这个级数是收敛的，因而(5.34)对于一切矩阵$A$都是绝对收敛的。
+
+应当进一步指出，级数
+$$
+\begin{align}
+\exp At=\displaystyle\sum_{k=0}^{\infty}\displaystyle\frac{A^kt^k}{k!}\tag{5.35}
+\end{align}
+$$
+在$t$的任何有限区间上是一致收敛的。事实上对于一切正整数$k$，当$|t|\leqslant c$($c$是某一正常数)时，有
+$$
+\left\|\displaystyle\frac{A^kt^k}{k!}\right\|\leqslant \displaystyle\frac{\|A\|^k|t|^k}{k!}\leqslant \displaystyle\frac{\|A\|^kc^k}{k!},
+$$
+而数值级数是收敛的，因而(5.35)是一致收敛的。
+
+矩阵指数$\exp A$有如下性质：
+
+1.如果矩阵$A,B$是可交换的，即$AB=BA$，则
+$$
+\begin{align}
+\exp(A+B)=\exp A\exp B\tag{5.36}
+\end{align}
+$$
+2.对于任何矩阵$A$，$(\exp A)^{-1}$存在，且
+$$
+\begin{align}
+(\exp A)^{-1}=\exp (-A)\tag{5.39}
+\end{align}
+$$
+3.如果$T$是非奇异矩阵，则
+$$
+\begin{align}
+\exp(T^{-1}AT)=T^{-1}(\exp A)T\tag{5.40}
+\end{align}
+$$
+
+定理9 <br>
+矩阵
+$$
+\begin{align}
+\Phi(t)=\exp At\tag{5.41}
+\end{align}
+$$
+是(5.33)的基解矩阵，且$\Phi(0)=E$。
+
+###### 基解矩阵的计算公式
+
+定理10 <br>
+如果矩阵具$A$有$n$个线性无关的特征向量$v_1,v_2,\cdots,v_n$，它们对应的特征值分别为$\lambda_1,\lambda_2,\cdots,\lambda_n$(不必各不相同)，那么矩阵
+$$
+\Phi(t)=[e^{\lambda_1t}v_1,e^{\lambda_2t}v_2,\cdots,e^{\lambda_nt}v_n],- \infty < t < + \infty.
+$$
+是常系数线性微分方程组
+$$
+\begin{align}
+\pmb{x}'=A\pmb{x}\tag{5.33}
+\end{align}
+$$
+的一个基解矩阵。
+
+一般来说，定理10中的$\Phi(t)$不一定就是$\exp At$。然而，我们可以确定它们之间的关系，因为$\exp At$和$\Phi(t)$都是(5.33)的基解矩阵，所以存在一个非奇异的常数矩阵$C$，使得
+$$
+\exp At=\Phi(t)C
+$$
+在上式中，令$t=0$，我们得到$C=\Phi^{-1}(0)$，因此
+$$
+\begin{align}
+\exp At=\Phi(t)\Phi^{-1}(0)\tag{5.47}
+\end{align}
+$$
+根据公式(5.47)，$\exp At$的计算问题相当于方程组(5.33)的任一基解矩阵的计算问题。
+
+附注1 <br>
+我们知道，如果$A$是实矩阵，那么$\exp At$也是实矩阵。因此，当$A$是实矩阵时，公式(5.47)给出一个构造实的基解矩阵的方法。
+
+
 
 
 
