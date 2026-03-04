@@ -31,6 +31,7 @@ HelloWorld案例 <br>
 ### POM文件
 
 父项目是Spring Boot的版本仲裁中心（他来真正管理Spring Boot应用里面的所有依赖版本），以后我们导入依赖默认是不需要写版本（没有在dependencies里面管理的依赖自然需要声明版本号）
+
 ```xml
 <parent>
     <groupId>org.springframework.boot</groupId>
@@ -39,7 +40,9 @@ HelloWorld案例 <br>
     <relativePath/> <!-- lookup parent from repository -->
 </parent>
 ```
+
 启动器 spring-boot-starter（spring-boot场景启动器），spring-boot-starter-web 帮我们导入了web模块正常运行所依赖的组件。
+
 ```xml
 <dependencies>
     <dependency>
@@ -79,11 +82,14 @@ SpringBoot使用一个全局的配置文件，配置文件名固定：applicatio
 #### YAML
 
 YAML配置例子
+
 ```yml
 server:
     port: 8081
 ```
+
 等价于XML配置：
+
 ```xml
 <server>
     <port>8081</port>
@@ -91,10 +97,12 @@ server:
 ```
 
 【语法】
+
 ```
 key: value(注意冒号后面有个空格)
 以空格的缩进来控制层级关系，只要是左对齐的一列数据，都是同一个层级
 ```
+
 【值写法】
 
 （1）字面量：普通的值(数字，字符串，布尔)
