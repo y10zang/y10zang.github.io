@@ -2,7 +2,6 @@
 
 * [Home](/)
 * [computer](computer/)
-* [java](computer/java/)
 * [python](computer/python/)
-* [bigData](computer/bigData/)
+* [python基础](computer/python/python基础.md)
 
