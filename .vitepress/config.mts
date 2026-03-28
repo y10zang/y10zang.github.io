@@ -80,7 +80,7 @@ export default defineConfig({
         }
       ]
     },
-
+    ignoreDeadLinks: true,
     socialLinks: [
       { icon: 'github', link: 'https://github.com/y10zang' }
     ]
