@@ -13,7 +13,7 @@
 
 ##### 1.首先需要准备这几个库
 
-```js
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -33,7 +33,7 @@ import os
 
 #### 1.初始化结构
 
-```js
+```python
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -46,19 +46,19 @@ class Net(nn.Module):
 
 解释一下
 
-1.self.fc1 = nn.Linear(28 * 28, 128)
+1.`self.fc1 = nn.Linear(28 * 28, 128)`
 
 这段是输入层到隐藏层的连接，其中(28*28)是可识别的分辨率,128是隐藏层神经元的数量
 
-2.self.relu = nn.ReLU()
+2.`self.relu = nn.ReLU()`
 
 这个是激活函数，目的就是过滤掉一些‘杂波’的影响，减小其对训练的干扰，相当于给数据增加了一个可被识别的阈值。更重要的是引入非线性，把直线变成折线，让神经网络能够描绘出复杂的形状（比如数字的弯曲边缘）。
 
-3.self.dropout = nn.Dropout(0.2)
+3.`self.dropout = nn.Dropout(0.2)`
 
 这是为了干扰网络训练的机制，目的是防止网络死记硬背从而影响学习效率。0.2 意味着在训练时，随机让 20% 的神经元“罢工” （输出变为 0）。可以让网络学会通过整体特征来认字，极大地防止过拟合。
 
-4.self.fc2 = nn.Linear(128, 10)
+4.`self.fc2 = nn.Linear(128, 10)`
 
 这段是隐藏层到输出层的连接，其中128是接收那 128 个神经元处理后的特征。10是输出0-9的结果。
 
@@ -66,7 +66,7 @@ class Net(nn.Module):
 
 #### 2.前向传播
 
-```js
+```python
 def forward(self, x):
     x = x.view(-1, 28 * 28)
     x = self.fc1(x)
@@ -91,7 +91,7 @@ def forward(self, x):
 
 #### 1.准备阶段
 
-```js
+```python
 def train_model():
     """训练模型或加载已有模型"""
     model_path = "mnist_model.pth"
@@ -110,7 +110,7 @@ def train_model():
 
 #### 2.数据处理与下载
 
-```js
+```python
 transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize((0.1307,), (0.3081,))
@@ -135,7 +135,7 @@ train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle
 
 #### 3.训练循环(核心一步)
 
-```js
+```python
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 criterion = nn.CrossEntropyLoss()
 
@@ -168,14 +168,14 @@ return model, device
 
 2.`criterion = nn.CrossEntropyLoss()`这段代码就是负责计算出交叉熵CrossEntropy，什么是交叉熵呢，就是预测结果与真实答案之间的距离，也可以叫损失Loss。如果Loss太大，就会在 `backward()` 的时候大幅修改参数。所以我们的训练目标就是得到尽可能接近0的Loss，至于为什么不能为0，是因为这时模型会过拟合，从而让训练失去意义。
 
-```js
+```python
 model.train() 
 epochs = 6
 ```
 
 然后我们开启训练模式，打开Dropout。定义循环次数，其实3次就已经可以让准确率达到90%以上了。
 
-```js
+```python
 for epoch in range(epochs): 
     for batch_idx, (data, target) in enumerate(train_loader):
 ```
@@ -200,21 +200,21 @@ for epoch in range(epochs):
 
 走完这五步，我们的模型就聪明了一点
 
-```js
+```python
 if batch_idx % 100 == 0: 
     print(f'Epoch {epoch + 1}/{epochs} | Batch {batch_idx} | Loss: {loss.item():.4f}')
 ```
 
 这一块是负责定期汇报学习进度，每学习完100个Batch就汇报一次。
 
-```js
+```python
 print("训练完成，正在保存模型...")
 torch.save(model.state_dict(), model_path)
 ```
 
 训练完成后保存模型
 
-```js
+```python
 model.eval()
 return model, device
 ```
@@ -231,7 +231,7 @@ return model, device
 
 我们最主要的一部分已经完成了，我这边直接给出一个实例，包含了写数字，识别，可信度，处理后图片，概论预测的可视化，热力图(数据的数值强度)。
 
-```js
+```python
 import tkinter as tk
 from PIL import Image, ImageDraw, ImageTk
 import matplotlib.pyplot as plt
@@ -396,7 +396,7 @@ if __name__ == "__main__":
 
 #### 1.neural_net.py
 
-```js
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -468,7 +468,7 @@ def train_model():
 
 #### 2.gui_app.py
 
-```js
+```python
 import tkinter as tk
 from PIL import Image, ImageDraw, ImageTk
 import matplotlib.pyplot as plt
