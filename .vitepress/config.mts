@@ -41,6 +41,7 @@ export default defineConfig({
               { text: 'HelloWorld', link: '/computer/java/helloworld' },
               { text: 'SpringBoot基础', link: '/computer/java/springBoot' },
               { text: 'SpringBoot注解速查', link: '/computer/java/springBootAnnotation' },
+              { text: 'JavaEE', link: '/computer/JavaEE/README' },
             ]},
             { text: 'Linux', items: [
               { text: 'Linux', link: '/computer/Linux/README' },
@@ -57,6 +58,26 @@ export default defineConfig({
               { text: 'HDFS', link: '/computer/bigData/HDFS' },
             ]}
           ]
+        }
+      ],
+      '/computer/JavaEE/':[
+        {
+          text: 'JavaEE',
+          items: [
+                { text: 'Index', link: '/README' },
+                { text: 'Computer', link: '/computer/README' },
+                { text: 'JavaEE', link: '/computer/JavaEE/README' },
+                {text: 'Lambda和Stream', link: '/computer/JavaEE/Lambda和Stream'},
+                {text: 'springBootHelloWorld', link: '/computer/JavaEE/springBootHelloWorld'},
+                {text: 'SpringBoot测试JUnit', link: '/computer/JavaEE/SpringBoot测试JUnit'},
+                {text: 'SpringBoot_MybatisPlus_代码生成', link: '/computer/JavaEE/SpringBoot_MybatisPlus_代码生成'},
+                {text: 'SpringBoot3+SpringSecurity6+OAuth2生产实战', link: '/computer/JavaEE/SpringBoot3+SpringSecurity6+OAuth2生产实战'},
+                {text: 'SpringBoot3整合Sa-Token', link: '/computer/JavaEE/SpringBoot3整合Sa-Token'},
+                {text: 'SpringBoot3整合SpringSecurity', link: '/computer/JavaEE/SpringBoot3整合SpringSecurity'},
+                {text: 'SpringBoot整合Elastic-Job', link: '/computer/JavaEE/SpringBoot整合Elastic-Job'},
+                {text: 'AQS是什么_为什么Java并发大厦的地基是它  ', link: '/computer/JavaEE/AQS是什么_为什么Java并发大厦的地基是它'},
+                {text: 'if-null_to_Optional', link: '/computer/JavaEE/if-null_to_Optional'},
+              ],
         }
       ],
       '/math/': [
@@ -80,7 +101,7 @@ export default defineConfig({
         }
       ]
     },
-    ignoreDeadLinks: true,
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/y10zang' }
     ]
