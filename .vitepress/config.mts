@@ -94,6 +94,7 @@ export default defineConfig({
             { text: 'Math', link: '/math/README' },
             { text: 'Analysis', items: [
               { text: 'Analysis', link: '/math/Analysis/README' },
+              { text: '极限', link: '/math/Analysis/极限' },
               { text: '外微分小结', link: '/math/Analysis/外微分小结' },
               { text: '做题杂记1', link: '/math/Analysis/做题杂记1' },
             ]},
