@@ -70,6 +70,7 @@ export default defineConfig({
                 {text: 'Lambda和Stream', link: '/computer/JavaEE/Lambda和Stream'},
                 {text: 'if-null_to_Optional', link: '/computer/JavaEE/if-null_to_Optional'},
                 {text: 'springBootHelloWorld', link: '/computer/JavaEE/springBootHelloWorld'},
+                {text: 'JAVA建造者模式及其实现', link: '/computer/JavaEE/JAVA建造者模式及其实现'},
                 {text: 'SpringBoot测试JUnit', link: '/computer/JavaEE/SpringBoot测试JUnit'},
                 {text: 'Mybatis入门实例', link: '/computer/JavaEE/Mybatis入门实例'},
                 {text: 'MyBatis基础', link: '/computer/JavaEE/MyBatis基础'},
@@ -95,6 +96,7 @@ export default defineConfig({
             { text: 'Analysis', items: [
               { text: 'Analysis', link: '/math/Analysis/README' },
               { text: '极限', link: '/math/Analysis/极限' },
+              { text: '连续性', link: '/math/Analysis/连续性' },
               { text: '外微分小结', link: '/math/Analysis/外微分小结' },
               { text: '做题杂记1', link: '/math/Analysis/做题杂记1' },
             ]},
