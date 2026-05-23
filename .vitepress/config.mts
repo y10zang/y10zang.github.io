@@ -97,6 +97,7 @@ export default defineConfig({
               { text: 'Analysis', link: '/math/Analysis/README' },
               { text: '极限', link: '/math/Analysis/极限' },
               { text: '连续性', link: '/math/Analysis/连续性' },
+              { text: '微分学', link: '/math/Analysis/微分学' },
               { text: '外微分小结', link: '/math/Analysis/外微分小结' },
               { text: '做题杂记1', link: '/math/Analysis/做题杂记1' },
             ]},
