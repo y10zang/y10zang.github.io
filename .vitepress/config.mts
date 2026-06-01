@@ -105,6 +105,7 @@ export default defineConfig({
             ]},
             { text: 'Algebra', items: [
               { text: 'Algebra', link: '/math/Algebra/README' },
+              { text: '行列式', link: '/math/Algebra/行列式' },
               { text: '做题杂记2', link: '/math/Algebra/做题杂记2' },
             ]},
             { text: 'ODE', link: '/math/ODE' },
