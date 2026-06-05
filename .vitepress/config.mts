@@ -99,6 +99,7 @@ export default defineConfig({
               { text: '连续性', link: '/math/Analysis/连续性' },
               { text: '函数性态分析', link: '/math/Analysis/函数性态分析' },
               { text: '微分学', link: '/math/Analysis/微分学' },
+              { text: '多元微分与几何应用', link: '/math/Analysis/多元微分与几何应用' },
               { text: '积分学', link: '/math/Analysis/积分学' },
               { text: '外微分小结', link: '/math/Analysis/外微分小结' },
               { text: '做题杂记1', link: '/math/Analysis/做题杂记1' },
